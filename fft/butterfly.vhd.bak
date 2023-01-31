@@ -1,0 +1,23 @@
+library ieee, ieee_proposed;
+use ieee.std_logic_1164.all;
+use ieee.math_complex_f.all;
+use ieee_proposed.fixed_pkg.all;
+
+
+
+
+entity butterfly is
+	port(a, b : in sfixed(8 downto -7);
+		  res : out sfixed(8 downto -7));
+end entity;
+
+
+architecture arc of float_test is 
+	--constant const : sfixed(7 downto -8) := (others=>'1');
+	--signal fixed_complex_R : COMPLEX_F := COMPLEX_F'(const, const);
+	--signal fixed_complex_L : COMPLEX_F := COMPLEX_F'((others=>'0'), (others=>'0'));
+	--signal fixed_complex_res : COMPLEX_F_OUT;
+
+	begin 
+		res <= resize(a * b, 8, -7);
+end;

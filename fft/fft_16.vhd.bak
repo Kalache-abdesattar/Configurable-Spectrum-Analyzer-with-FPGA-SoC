@@ -1,0 +1,20 @@
+library ieee, ieee_proposed;
+use ieee.std_logic_1164.all;
+use ieee.math_complex_f.all;
+use ieee_proposed.fixed_pkg.all;
+
+
+
+
+entity vec_mux is
+	port(x : in array(0 to 15) of COMPLEX_F;
+		  sel : in std_logic_vector(0 to 3);
+		  y : out COMPLEX_F);
+end entity;
+
+
+architecture arc of butterfly is 
+	begin 
+		Xk0 <= Ek + twiddle_fact * Ok;
+		Xk1 <= Ek - twiddle_fact * Ok;
+end;
